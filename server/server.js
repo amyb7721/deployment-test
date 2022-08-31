@@ -4,12 +4,18 @@ const path = require('path');
 
 const app = express();
 
-// endpoints
+// endpoints!!!!!!!!!!!!!!!!!!
 
 // the slash means home page, second arugment is function. we are going to send file to heruko so we are making the path. 
 // dirname is a variable of the location of our server file.
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"))
+})
+
+// endpoint for html
+
+app.get('/css', () => {
+    res.sendFile(path.join(__dirname, "../client/styles.css"))
 })
 
 // we would use port 4005 if herkuo cant find it. we are connecting it here.
