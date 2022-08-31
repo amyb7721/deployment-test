@@ -9,13 +9,18 @@ const app = express();
 // the slash means home page, second arugment is function. we are going to send file to heruko so we are making the path. 
 // dirname is a variable of the location of our server file.
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/index.html"))
+    res.sendFile(path.join(__dirname, "../client/index.html"));
 });
 
 // endpoint for html
 
 app.get('/css', (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/styles.css"))
+    res.sendFile(path.join(__dirname, "../client/styles.css"));
+});
+
+// we need herkuo to look for the js files that is linked to the html files
+app.get('/js', (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/client.js"));
 });
 
 // we would use port 4005 if herkuo cant find it. we are connecting it here.
