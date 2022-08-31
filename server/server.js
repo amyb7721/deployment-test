@@ -10,13 +10,13 @@ const app = express();
 // dirname is a variable of the location of our server file.
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"))
-})
+});
 
 // endpoint for html
 
-app.get('/css', () => {
+app.get('/css', (req, res) => {
     res.sendFile(path.join(__dirname, "../client/styles.css"))
-})
+});
 
 // we would use port 4005 if herkuo cant find it. we are connecting it here.
 const port = process.env.PORT || 4005;
